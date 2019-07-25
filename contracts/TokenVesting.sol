@@ -185,7 +185,7 @@ contract TokenVesting is Ownable {
     function revoke() public onlyOwner {
         require(_revocable, "This vest cannot be revoked");
         require(!_revoked, "This vest has already been revoked");
-        require(block.timestamp > _cliff, "Cliff hasnt started yet.");
+        // require(block.timestamp > _cliff, "Cliff hasnt started yet.");
 
         _revoked = true;
         uint256 amountToSend = 0;
